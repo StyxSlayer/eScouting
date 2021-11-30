@@ -1,0 +1,532 @@
+body{
+  background-color: black;
+  color:white;
+  font-family: sans-serif;
+  height:100%;
+}
+
+#standbyScreen{
+  display: none;
+  flex-direction: column;
+}
+#standbyTitle{
+  text-align: center;
+  font-size: 50px;
+}
+#standbyButton{
+  border-radius: 3px;
+  border: 2px solid white;
+  font-size: 25px;
+  display:flex;
+  padding: 25px;
+  margin: 50px;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/cardboard.jpg");
+}
+
+
+#autoScreen{
+  background-color:black;
+  display: none;
+  flex-direction: column;
+  height: 86vh;
+}
+#topBar{
+  display: flex;
+  flex-direction: row;
+  height:55%;
+  
+}
+#containerLeftTop{
+  display: flex;
+  flex-direction:column;
+  width: 50%;
+  
+}
+#containerRightTop{
+  display: flex;
+  flex-direction:column;
+  width: 50%;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 15px;
+}
+#bottomBar{
+  display: flex;
+  flex-direction: row;
+  height:45%;
+}
+#containerLeftBottom{
+  display: flex;
+  flex-direction:row;
+  width: 50%;
+
+}
+#containerRightBottom{
+  display: flex;
+  flex-direction:row;
+  width: 50%;
+
+}
+
+#quantitative1{
+  position: relative;
+  height:50%;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  background-color: rgb(255, 255, 255, 0);
+}
+#quantitative2{
+  position: relative;
+  height:50%;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+}
+#quantitative3{
+  position: relative;
+  height:100%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+}
+#quantitative4{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#bool1{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+  background-color: black;
+}
+#bool2{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#trigger1{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+#teleopScreen{
+  display: none;
+  flex-direction: column;
+  height: 86vh;
+
+}
+#infoBar{
+  height: 5%;
+  display:none;
+  justify-content: center;
+  margin-top: 2%
+}
+#timerDisplay{
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: yellow;
+}
+#teamDisplay{
+  width: 10%;
+  text-align: center;
+  font-size: 20px;
+}
+#matchDisplay{
+  width: 10%;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+#tQuantitative1{
+  position: relative;
+  height:50%;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  background-color: rgb(255, 255, 255, 0);
+}
+#tQuantitative2{
+  position: relative;
+  height:50%;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+}
+#tQuantitative3{
+  position: relative;
+  height:100%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+}
+#tQuantitative4{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#tBool1{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+  background-color: black;
+}
+#tBool2{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#tTrigger1{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+
+#endgameScreen{
+  display: none;
+  flex-direction: column;
+  height: 86vh;
+}
+
+
+#eQuantitative1{
+  position: relative;
+  height:50%;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  background-color: rgb(255, 255, 255, 0);
+}
+#eQuantitative2{
+  position: relative;
+  height:50%;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+}
+#eQuantitative3{
+  position: relative;
+  height:100%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+}
+#eQuantitative4{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#eBool1{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+  background-color: black;
+}
+#eBool2{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#eTrigger1{
+  position: relative;
+  height:100%;
+  width: 50%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#innerdiv {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 30px;
+  padding-left: 2px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+#endscreenScreen{
+  display:none;
+  width: 100%;
+  flex-direction: column;
+}
+#qata{ 
+  width: 100%;
+  height: 26vh;
+  padding: 12px 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+#qataDT{ 
+  width: 100%;
+  height: 7vh;
+  padding: 12px 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+#qataDriver{ 
+  width: 100%;
+  height: 7vh;
+  padding: 12px 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+#containerQATALeft{
+  display: flex;
+  flex-direction:column;
+  width: 50%;
+}
+#containerQATARight{
+  display: flex;
+  flex-direction:column;
+  width: 50%;
+  margin: 15px;
+}
+#topBarQATA{
+  display: flex;
+  flex-direction: row;
+  height:100%;
+}
+#eBool3{
+  height:100%;
+  width: 100%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#eBool4{
+  height:100%;
+  width: 100%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#eBool5{
+  height:100%;
+  width: 100%;
+
+  margin: 15px;
+  text-align: center;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+#bruhtton{
+  width: 100%;
+  height: 50px;
+}
+
+#endscreenscreenScreen{
+  display:none;
+  width: 100%;
+  flex-direction: column;
+}
+#teamQATADisplay{
+  font-size: 50px;
+}
+#matchQATADisplay{
+  font-size: 50px;
+}
+
+
+#dropbtn {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius:10px;
+  margin: 15px;
+  width: 80%;
+
+}
+
+#dropdown {
+  position: relative;
+  display: inline-block;/*N I C E   line number*/
+  width: 15%;
+  
+}
+
+#dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+#dropdown-content a {
+  color: black;
+  padding: 3px 16px;
+  text-decoration: none;
+  display: block;
+}
+#dataEditDisplay{
+  border: 2px solid white;
+  border-radius: 10px; 
+  padding: 15px;
+  color: white;
+  margin: 15px;
+  width: 400px;
+  font-family: 'Courier New', Courier, monospace;
+}
+#editDataScreen{
+  display:none;
+  flex-direction: row;
+}
+#qataButton{
+  border: 3px solid white;
+  border-radius: 100%;
+  padding: 5px;
+  color:white;
+  width: 31.33px;
+  background-color: black;
+  text-emphasis: bold;
+}
+#QRButton {
+  height: 50px;
+  width: 50%;
+  padding:10px;
+  background-color:rgba(100, 100, 100, 0.1);
+  border: white solid 2px;
+  border-radius: 15px;
+  color:white;
+  margin-top: 50px;
+}
+
+.dataEditContent{
+  display: flex;
+  justify-content: center;
+}
+
+#dataTypeDisplay{
+  font-weight: bold;
+  display:flex;
+  justify-content: center;
+}
+
+#dropdown-content a:hover {background-color: #f1f1f1;}
+#dropdown:hover #dropdown-content {display: block;}
+#dropdown:hover #dropbtn {background-color: #5a5a5a;}
+
+table{
+  margin-left: 100px;
+  margin-top: 15px;
+  border:solid 2px white;
+  border-collapse: collapse;
+}
+td{
+  border: solid 1px white;
+  padding: 3px;
+  
+  
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="/images/smileytexas.jpg">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>eScouting</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="body">
+	<!-- Intro screen -->
+	<div id="inputScreen">
+		<h1 id="Header">
+			Please input info
+		</h1>
+		<div id="qualitativeInputs">
+			<label for="teamNumber">Team Number:</label><br>
+            <input type="text" id="teamNumber" name="teamNumber"><br>
+            <label for="matchNumber">Match Number</label><br>
+            <input type="text" id="matchNumber" name="matchNumber">
+         </div>
+         <form>
+            <input type="radio" id="redAlliance" name="alliance" value="red">
+            <label for="redAlliance">Red</label><br>
+            <input type="radio" id="blueAlliance" name="alliance" value="blue">
+            <label for="blueAlliance">Blue</label><br>
+         </form>
+         <input type="button" onclick="initScreen()" value="Submit">
+      </div>
+      <!-- Standby Screen -->
+      <div id="standbyScreen">
+         <h1 id="standbyTitle">
+            Tap the button twice when match starts
+         </h1>
+         <br>
+         <button id="standbyButton">
+         Start
+         </button>
+      </div>
+      <!-- Auto Screen -->
+      <div id="autoScreen">
+         <div id="topBar">
+            <div id="containerLeftTop">
+               <div id="quantitative1" onclick="tri(1, 2)"> High Goal
+                <div id="innerdiv">F</div>
+               </div>
+               <div id="quantitative2" onclick="tri(1, 1)"> Inner Goal
+                 <div id="innerdiv">D</div>
+               </div>
+            </div>
+            <div id="containerRightTop">
+               <div id="quantitative3" onclick="tri(1, 4)"> Missed Shot
+                 <div id="innerdiv">J</div>
+               </div>
+            </div>
+         </div>
+         <div id="bottomBar">
+            <div id="containerLeftBottom">
+               <div id="quantitative4" onclick="tri(1, 3)">Low Goal
+                 <div id="innerdiv">A</div>
+               </div>
+               <div id="trigger1" >
+                 <div id="innerdiv">S</div>
+               </div>
+            </div>
+            <div id="containerRightBottom">
+               <div id="bool1" onclick="tri(1, 0)"> Auto mobility
+                 <div id="innerdiv">K</div>
+               </div>
+               <!-- dont penalty in auto lol -->
+               <div id="bool2" >
+                 <div id="innerdiv">L</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- teleop screen --> 
+      <div id="teleopScreen">
+         <div id="topBar">
+            <div id="containerLeftTop">
+               <div id="tQuantitative1" onclick="tri(1, 6)"> High Goal
+                 <div id="innerdiv">F</div>
+               </div>
+               <div id="tQuantitative2" onclick="tri(1, 5)"> Inner Goal
+                 <div id="innerdiv">D</div>
+               </div>
+            </div>
+            <div id="containerRightTop">
+               <div id="tQuantitative3" onclick="tri(1, 8)"> Missed Shot
+                 <div id="innerdiv">J</div>
+               </div>
+            </div>
+         </div>
+         <div id="bottomBar">
+            <div id="containerLeftBottom">
+               <div id="tQuantitative4" onclick="tri(1, 7)">Low Goal
+                 <div id="innerdiv">A</div>
+               </div>
+               <div id="tTrigger1" onclick="tri(1, 9)"> WOF
+                 <div id="innerdiv">S</div>
+               </div>
+            </div>
+            <div id="containerRightBottom">
+               <div id="tBool1" onclick="tri(1, 13)"> DefenCe Timer 
+                 <div id="innerdiv">K</div>
+               </div>
+               <div id="tBool2" onclick="tri(1, 14)"> Penalty
+                 <div id="innerdiv">L</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- endgame screen --> 
+      <div id="endgameScreen">
+         <div id="topBar">
+            <div id="containerLeftTop">
+               <div id="eQuantitative1" onclick="tri(1, 6)"> High Goal
+                 <div id="innerdiv">F</div>
+               </div>
+               <div id="eQuantitative2" onclick="tri(1, 5)"> Inner Goal
+                 <div id="innerdiv">D</div>
+               </div>
+            </div>
+            <div id="containerRightTop">
+               <div id="eQuantitative3" onclick="tri(1, 8)"> Missed Shot
+                 <div id="innerdiv">J</div>
+               </div>
+            </div>
+         </div>
+         <div id="bottomBar">
+            <div id="containerLeftBottom">
+               <div id="eQuantitative4" onclick="tri(1, 7)">Low Goal
+                 <div id="innerdiv">A</div>
+               </div>
+               <div id="eTrigger1" onclick="tri(1, 10)"> Attempted Climb
+                 <div id="innerdiv">S</div>
+               </div>
+            </div>
+            <div id="containerRightBottom">
+               <div id="eBool1" onclick="tri(1, 12)"> Climb Timer
+                 <div id="innerdiv">K</div>
+               </div>
+               <div id="eBool2" onclick="tri(1, 14)"> Penalty
+                 <div id="innerdiv">L</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="endscreenScreen">
+         <h1>QATA: </h1>
+         <pre>
+        Examples:
+        Starting position, what is auto?
+        yeet distance 
+        speeeed
+        
+      </pre>
+         <div id = "topBarQATA">
+            <div id="containerQATALeft"> 
+               <textarea type="text" placeholder = "General QATA" id="qata" name="qata"></textarea>
+               <br>
+               <textarea type="text" placeholder = "Drivetrain (tank, swerve, meccanum)" id="qataDT" name="qataDT"></textarea>
+               <br>
+               <textarea type="text" placeholder = "Driver Rating (1-10)" id="qataDriver" name="qataDriver"></textarea>
+               <br>
+               <button onclick ="triggerEditScreen()" id="bruhtton"> Proceed to Edit Screen
+               </button>
+            </div>
+            <div id="containerQATARight">
+               <div id="eBool5" onclick="tri(1, 11)">Successful Climb:
+               </div>
+               <div id="eBool3" onclick="tri(1, 15)">Under WOF:
+               </div>
+               <div id="eBool4" onclick="tri(1, 16)">Oof:
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="editDataScreen">
+         <div id="dropdown" style="float:left;">
+            <button id="dropbtn">Select Here ▼</button>
+            <div id="dropdown-content" style="left:0;">
+               <a onclick="changeEdit(0)">Auto Mobility</a>
+               <a onclick="changeEdit(1)">Auto Inner</a>
+               <a onclick="changeEdit(2)">Auto Outer</a>
+               <a onclick="changeEdit(3)">Auto Lower</a>
+               <a onclick="changeEdit(4)">Auto Missed</a>
+               <a onclick="changeEdit(5)">Tele Inner</a>
+               <a onclick="changeEdit(6)">Tele Outer</a>
+               <a onclick="changeEdit(7)">Tele Lower</a>
+               <a onclick="changeEdit(8)">Tele Missed</a>
+               <a onclick="changeEdit(9)">WOF</a>
+               <a onclick="changeEdit(10)">Attempted Climb</a>
+               <a onclick="changeEdit(11)">Successful Climb</a>
+               <a onclick="changeEdit(12)">Climb Time</a>
+               <a onclick="changeEdit(13)">DefenCe Time</a>
+               <a onclick="changeEdit(14)">Penalties</a>
+               <a onclick="changeEdit(15)">Under WOF</a>
+               <a onclick="changeEdit(16)">oof</a>
+            </div>
+         </div>
+         <div class="dataEditContainer">
+            <div style="display:flex;">
+              <div id="dataEditDisplay">
+                epic data to edit here :)
+              </div>
+              
+              <div style = "justify-content: center; display: flex; flex-direction: column;">
+               <button id ="qataButton" onclick="editDataPlus()">+</button>
+               <button id ="qataButton" onclick="editDataMinus()">-</button>
+              </div>
+            </div>
+
+
+            <div id = "dataTypeDisplay">
+              Currently editing: Auto Mobility
+            </div>
+            <div style = "justify-content: center; display: flex;">
+              <button id = "QRButton" onclick="triggerQrScreen()"> Generate QR code </button>
+            </div>
+         </div>
+
+         <table>
+          <tr>
+            <td id="dataType0">Data name</td>
+            <td id="dataValue0">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType1">Data name</td>
+            <td id="dataValue1">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType2">Data name</td>
+            <td id="dataValue2">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType3">Data name</td>
+            <td id="dataValue3">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType4">Data name</td>
+            <td id="dataValue4">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType5">Data name</td>
+            <td id="dataValue5">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType6">Data name</td>
+            <td id="dataValue6">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType7">Data name</td>
+            <td id="dataValue7">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType8">Data name</td>
+            <td id="dataValue8">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType9">Data name</td>
+            <td id="dataValue9">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType10">Data name</td>
+            <td id="dataValue10">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType11">Data name</td>
+            <td id="dataValue11">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType12">Data name</td>
+            <td id="dataValue12">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType13">Data name</td>
+            <td id="dataValue13">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType14">Data name</td>
+            <td id="dataValue14">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType15">Data name</td>
+            <td id="dataValue15">Data value</td>
+          </tr>
+          <tr>
+            <td id="dataType16">Data name</td>
+            <td id="dataValue16">Data value</td>
+          </tr>
+        </table>
+          
+      </div>
+      <div id="endscreenscreenScreen">
+         <div id="qrcode"></div>
+         <div id="infoQATABar">
+            <div id="teamQATADisplay"> Team: </div>
+            <div id="matchQATADisplay"> Match: </div>
+         </div>
+         <div id="dataString"></div>
+      </div>
+      <div id="infoBar">
+         <div id="teamDisplay"> Team: </div>
+         <div id="timerDisplay"> 150 </div>
+         <div id="matchDisplay"> Match: </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+      <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+      <script src="script.js"></script>
+   </body>
+</html>
